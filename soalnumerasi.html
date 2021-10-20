@@ -1,0 +1,1573 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Simulasi AKM</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest.css">
+	<link rel="mask-icon" href="safari-pinned-tab.svg">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="icheck-bootstrap.min.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120206082-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-120206082-3');
+	</script>
+</head>
+<body>
+
+<div class="container-fluid text-white" style="background:#326698;background-size: contain;background-image: url('bg-top.png');background-repeat: no-repeat;background-position: left; height:150px;position:fixed;top:0px;left:0px;right:0px">
+	  <div class="row">
+		<div class="col pl-5 pt-1">
+			<table>
+				<tr>
+					<td>
+						<img style="margin:5px;height:70px" src="logo-kemdikbud-71x72.png">
+					</td>
+					<td>
+						<div><b>PUSMENJAR</b></div>
+						<div><small>APLIKASI ANBK<small></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col pl-5 pt-1 mt-4 pr-5 text-right">
+			<table align="right">
+				<tr>
+					<td style="vertical-align:top">
+						<div><small>P130100230 - ss<small></div>
+					</td>
+					<td>
+						<div class="pl-1 pr-1 pt-1 pb-1" style="background:#74b9ff;border-radius:2px;color:#326698"><i class="fa fa-graduation-cap fa-flip-horizontal"></i></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	  </div>
+</div>
+
+<div class="container-fluid fadeInDown mb-5" style="margin-top:100px;">
+  <div class="row">
+	<div class="col-sm-12" style="border:0px solid red">
+		<div class="text-left pt-3 pb-5 mb-2" id="formContent" style="background-size: 300px;background-image: url('logo-w.png');background-repeat: no-repeat;background-position: top right; ">
+		  <div class="row row-atas"> 
+			<div class="col-sm-4"><span style="font-size:18px">Soal nomor</span> <span style="font-size:20px" id="noSoal">1</span></div>
+			<div class="col-sm-8 cont-btn-informasi">
+				<button class="btn-informasi btn btn-primary btn-round m" data-toggle="modal" data-target="#infoSoal" style="border-radius:30px;font-size:12px;"><i class="fa fa-info-circle d-sm-none"></i><span class="d-none d-sm-inline-block">INFORMASI SOAL<span></span></button>
+				<button class="btn-informasi btn  btn-outline-secondary  btn-round" style="border-radius:30px;font-size:12px;">Sisa Waktu : <b><span id="countdown">00:00</span></b></button>
+				<button class="btn-informasi btn btn-primary btn-round" data-toggle="modal" data-target="#myModal" style="border-radius:30px;font-size:12px"><span class="d-none d-sm-inline-block">Daftar Soal </span> <i class="fa fa-th-large"></i></button>
+			</div>
+		  </div>
+		  <div class="row pb-2  row-atas"> 
+			<div class="col-sm-6"><small>Ukuran font soal:</small> <span style="font-size:12px" class="ml-2 mr-1 cfont" id="c1" onClick="changeFont('12','c1')">A</span> <span style="font-size:16px" class="ml-2 mr-1 cfont"  id="c2" onClick="changeFont('16','c2')">A</span> <span style="font-size:20px" class="ml-2 mr-1 cfont" id="c3" onClick="changeFont('18','c3')">A</span></div>
+			<div class="col-sm-6 mt-2 mataujian">
+				Numerasi - SD/MI/PAKET A			</div>
+		  </div>
+		  <div class="row pl-3 pr-3 pb-2 mb-2"> 
+			<div class="col"  style="border-bottom:1px solid #eee"></div>
+		  </div>
+		  <!-- isi soal -->
+		  <div class="row pl-3 pr-3 pb-2 mb-2"> 
+			<div class="col p-4 "  id="isisoal" style="border:2px solid #eee; border-top:10px solid #eee;">
+				<div class="soal-soal" style="display:none" id="soal-no-1"><div><?xml encoding="utf-8" ?><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!<br />
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p><br />
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p><br />
+</td><br />
+</tr></tbody></table><p>Saat lift kosong, berapa paling banyak orang dengan berat badan sama dengan Andi yang dapat masuk?</p><br />
+</div>								<div>
+								 <!-- PG -->
+											<table class="table " style="margin-top:0px">
+																								<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('1.','0');">
+													<input id="pilihan_1_0"  onChange="pilihan('1','a','2')" pil="a" name="pilihan1" type="radio"   />
+													<label for="pilihan_1_0"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(1,0);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>1</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('1.','1');">
+													<input id="pilihan_1_1"  onChange="pilihan('1','b','2')" pil="b" name="pilihan1" type="radio"   />
+													<label for="pilihan_1_1"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(1,1);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>5</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('1.','2');">
+													<input id="pilihan_1_2"  onChange="pilihan('1','c','2')" pil="c" name="pilihan1" type="radio"   />
+													<label for="pilihan_1_2"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(1,2);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>6</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('1.','3');">
+													<input id="pilihan_1_3"  onChange="pilihan('1','d','2')" pil="d" name="pilihan1" type="radio"   />
+													<label for="pilihan_1_3"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(1,3);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>8</p>
+</td></tr>											</table>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-2"><div><?xml encoding="utf-8" ?><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!<br />
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p><br />
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p><br />
+</td><br />
+</tr></tbody></table><p>Dua orang akan masuk ke dalam lift. Mereka akan bergabung dengan kelima orang yang sudah ada di dalam lift. Dua orang yang dapat masuk secara bersamaan ke dalam lift tersebut adalah &hellip;.</p><br />
+</div>								<div>
+								 <!-- PG kompleks checkbox -->
+											<table class="table" style="margin-top:10px">
+																								<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('2.','0');">
+													<input id="pilihan_2_0" class="pilihan2" onChange="pilihan2('2','a','3')" pil="a" name="pilihan2" type="checkbox"  value="A"  />
+													<label for="pilihan_2_0"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(2,0);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>Andi dan Joni</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('2.','1');">
+													<input id="pilihan_2_1" class="pilihan2" onChange="pilihan2('2','b','3')" pil="b" name="pilihan2" type="checkbox"  value="B"  />
+													<label for="pilihan_2_1"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(2,1);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>Andi dan Rosa</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('2.','2');">
+													<input id="pilihan_2_2" class="pilihan2" onChange="pilihan2('2','c','3')" pil="c" name="pilihan2" type="checkbox"  value="C"  />
+													<label for="pilihan_2_2"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(2,2);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>Rosa dan Joni</p>
+</td></tr>											</table>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-3"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!<br />
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p><br />
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p><br />
+</td><br />
+</tr></tbody></table><p>Apabila ada yang bergabung dengan kelima orang yang ada di dalam lift, apakah kondisi berikut memungkinkan? Berilah tanda centang&nbsp;(&radic;) pada kolom &lsquo;Benar&rsquo; atau &lsquo;Salah&rsquo; pada setiap pernyataan!</p><br />
+</div>								<div>
+								 <!-- PG Kompleks > 1 jawaban pilihan -->
+											<table class="table table-bordered table-hover" style="margin-top:10px;">
+											<thead><tr><td class="text-center d-none" style="width:50px">#</td><td>Pernyataan</td><td class="text-center" style="width:100px">Benar</td><td class="text-center" style="width:100px">Salah</td></tr></thead><tr><td class="text-center d-none" style="padding:2px">A.</td><td class="text-left" style="padding:2px;padding-left:10px">Andi, Rosa, dan Joni dapat masuk dan menggunakan lift secara bersama-sama.</td>														<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('3.','1','1');">
+															<input  id="pilihan_3_1_1" name="pilihan_3_1" class="pilihan__1" onChange="pilihan3('3','2','4','ABCDEFGHIJK')" type="radio" value="1"  />
+															<label for="pilihan_3_1_1"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('3.','1','2');">
+															<input  id="pilihan_3_1_2" name="pilihan_3_1" class="pilihan__1" onChange="pilihan3('3','2','4','ABCDEFGHIJK')" type="radio" value="2"  />
+															<label for="pilihan_3_1_2"></label>
+															</div>
+														</td>
+													</tr><tr><td class="text-center d-none" style="padding:2px">B.</td><td class="text-left" style="padding:2px;padding-left:10px">Lift sudah tidak dapat diisi lagi.</td>														<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('3.','2','1');">
+															<input  id="pilihan_3_2_1" name="pilihan_3_2" class="pilihan__2" onChange="pilihan3('3','2','4','ABCDEFGHIJK')" type="radio" value="1"  />
+															<label for="pilihan_3_2_1"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('3.','2','2');">
+															<input  id="pilihan_3_2_2" name="pilihan_3_2" class="pilihan__2" onChange="pilihan3('3','2','4','ABCDEFGHIJK')" type="radio" value="2"  />
+															<label for="pilihan_3_2_2"></label>
+															</div>
+														</td>
+													</tr>											</table>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-4"><div><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml encoding="utf-8" ?><html><body><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p>
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p>
+</td>
+</tr></tbody></table><p>Apabila Andi masuk lift dengan membawa barang seberat 6 kg dan bergabung dengan kelima orang yang di dalam lift, berapa kg kapasitas lift yang tersisa? <soal_isian><input type="text" autocomplete="off" value="" title="5" name="isian_4[]" style="margin:1px;background:#eee;width:150px;border-top:0px;border-left:0px;border-right:0px;font-weight:bold;text-align:center" class="soal_isian_4"></soal_isian> kg</p></body></html>
+										
+										</div>								<div>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-5"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!<br />
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p><br />
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p><br />
+</td><br />
+</tr></tbody></table><p>Keluarga Dewi juga ingin masuk ke dalam lift. Mereka akan bergabung dengan kelima orang di dalam lift. Keluarga Dewi terdiri atas Ayah (72 kg), Ibu (63 kg), Feri (33 kg) dan Dewi (45 kg). Mereka membawa beberapa kardus.</p><br />
+<p>Pasangkanlah nama anggota keluarga Dewi dengan berat kardus paling berat yang dapat dibawa masuk! Pasangkanlah dengan mengeklik bulatan di sebelah kiri dan bulatan di sebelah kanan yang sesuai!</p><br />
+</div>								<div>
+								 <!-- Pencocokan  -->
+																					<table class="table">
+												<tr><td style="width:45%">
+													<table class="table table-hover table-bordered" id="tabel-soal-1">
+														<thead>
+														<tr id="judul-tabel">
+															<td colspan="2">Anggota Keluarga</td>
+														</thead>
+														<tr id="row1-5-1" class="tr-left-5">
+																			<td onClick="pilih1('5','1','#00BCD4','1')">Ayah, Ibu, dan Feri</td>
+																			<td class="text-center" style="width:50px"  onClick="pilih1('5','1','#00BCD4','1')"><div id= "d_left_5_1">
+																			<div class="checkbox icheck-primary" id="radio_left_5_1">
+																			<input type="radio" name="left[5][1]" value="1" class="m-left-5" id= "r_left_5_1" onClick="pilih1('5','1','#00BCD4','1')">
+																			<label for="radio_left_5_1"></label>
+																			</div>
+																			</div></td></tr><tr id="row1-5-2" class="tr-left-5">
+																			<td onClick="pilih1('5','2','#F44336','2')">Ayah, Feri, dan Dewi</td>
+																			<td class="text-center" style="width:50px"  onClick="pilih1('5','2','#F44336','2')"><div id= "d_left_5_2">
+																			<div class="checkbox icheck-primary" id="radio_left_5_2">
+																			<input type="radio" name="left[5][2]" value="2" class="m-left-5" id= "r_left_5_2" onClick="pilih1('5','2','#F44336','2')">
+																			<label for="radio_left_5_2"></label>
+																			</div>
+																			</div></td></tr><tr id="row1-5-3" class="tr-left-5">
+																			<td onClick="pilih1('5','3','#4CAF50','3')">Ibu, Dewi, dan Feri</td>
+																			<td class="text-center" style="width:50px"  onClick="pilih1('5','3','#4CAF50','3')"><div id= "d_left_5_3">
+																			<div class="checkbox icheck-primary" id="radio_left_5_3">
+																			<input type="radio" name="left[5][3]" value="3" class="m-left-5" id= "r_left_5_3" onClick="pilih1('5','3','#4CAF50','3')">
+																			<label for="radio_left_5_3"></label>
+																			</div>
+																			</div></td></tr>														
+														
+													</table>
+												</td>
+												<td style="width:10%"></td>
+												<td style="width:45%">
+													<table class="table table-hover table-bordered" id="tabel-soal-2">
+														<thead>
+														<tr id="judul-tabel">
+															<td colspan="2">Berat Kardus</td>
+														</thead>
+														<tr id="row2-5-1" class="tr-right-5">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('5','1',2,'1','6','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_5_1">
+																			<input type="radio" name="right[5][1]" value="1" id="r_right_5_1" onClick="pilih2('5','1',2,'1','6','2')" class="m-right-5">
+																			<label for="radio_right_5_1"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('5','1',2,'1','6','2')">29 Kg</td></tr><tr id="row2-5-2" class="tr-right-5">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('5','2',2,'2','6','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_5_2">
+																			<input type="radio" name="right[5][2]" value="2" id="r_right_5_2" onClick="pilih2('5','2',2,'2','6','2')" class="m-right-5">
+																			<label for="radio_right_5_2"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('5','2',2,'2','6','2')">20 Kg</td></tr><tr id="row2-5-3" class="tr-right-5">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('5','3',2,'3','6','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_5_3">
+																			<input type="radio" name="right[5][3]" value="3" id="r_right_5_3" onClick="pilih2('5','3',2,'3','6','2')" class="m-right-5">
+																			<label for="radio_right_5_3"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('5','3',2,'3','6','2')">19 Kg</td></tr><tr id="row2-5-4" class="tr-right-5">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('5','4',2,'4','6','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_5_4">
+																			<input type="radio" name="right[5][4]" value="4" id="r_right_5_4" onClick="pilih2('5','4',2,'4','6','2')" class="m-right-5">
+																			<label for="radio_right_5_4"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('5','4',2,'4','6','2')">2 Kg</td></tr>														
+														
+													</table>
+												</td>
+												</tr>
+											</table>
+											
+											<div><button type="button" class="btn btn-white btn-primary btn-sm btn-round" onClick="resetKunci('5','1')"><i class="ace-icon fa fa-refresh"></i> Ganti Jawaban</button></div>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-6"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><table style="border: 1px solid #eee;" cellpadding="10"><tbody><tr><td>Perhatikan keterangan pada gambar lift di bawah ini!<br />
+<p><img src="24017_422be4a57b6a7a2dfc1ab39302a7ef4b.png" alt=""></p><br />
+<p>Lift sudah berisi 5 orang dengan jumlah berat badan 380 kg.<br>Di luar lift, Andi, Rosa, dan Joni akan masuk ke dalam lift yang sama.</p><br />
+</td><br />
+</tr></tbody></table><p>Jika Rosa dan Joni masuk bersamaan, kemudian bergabung dengan kelima orang di dalam lift, berapa kilogram barang&nbsp; paling berat yang dapat mereka bawa? Jelaskan alasan matematismu!</p><br />
+</div>								<div>
+								 <!-- Essai Terbuka -->
+																						<p>Jawab :</p>
+											<textarea class="form-control jawaban_essai" rows="4" style="border-radius:5px" name="jawaban_essai[6]" id="jawaban_essai_6" title="6" pre="7"></textarea>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-7"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>Ari mencoba mengisi gayung di rumahnya dengan air. Gayung diisi air hingga penuh. Setelah itu, air dari gayung ia masukkan ke beberapa gelas.<br>Perhatikan gambar berikut!<br><img src="73280_86b97860e767c954d9c2080511eb65e1.png" alt=""></p><br />
+<p>Pasangkan gambar di sebelah kiri dengan banyak gelas air yang tepat untuk mengisinya di sebelah kanan!</p><br />
+</div>								<div>
+								 <!-- Pencocokan  -->
+																					<table class="table">
+												<tr><td style="width:45%">
+													<table class="table table-hover table-bordered" id="tabel-soal-1">
+														<thead>
+														<tr id="judul-tabel">
+															<td colspan="2">Gambar 1</td>
+														</thead>
+														<tr id="row1-7-1" class="tr-left-7">
+																			<td onClick="pilih1('7','1','#00BCD4','1')"><img src="90019_33c4218982098039b024c87367d0f1f4.png"></td>
+																			<td class="text-center" style="width:50px"  onClick="pilih1('7','1','#00BCD4','1')"><div id= "d_left_7_1">
+																			<div class="checkbox icheck-primary" id="radio_left_7_1">
+																			<input type="radio" name="left[7][1]" value="1" class="m-left-7" id= "r_left_7_1" onClick="pilih1('7','1','#00BCD4','1')">
+																			<label for="radio_left_7_1"></label>
+																			</div>
+																			</div></td></tr><tr id="row1-7-2" class="tr-left-7">
+																			<td onClick="pilih1('7','2','#F44336','2')"><img src="90019_b310a52150211a148605355a6371af19.png"></td>
+																			<td class="text-center" style="width:50px"  onClick="pilih1('7','2','#F44336','2')"><div id= "d_left_7_2">
+																			<div class="checkbox icheck-primary" id="radio_left_7_2">
+																			<input type="radio" name="left[7][2]" value="2" class="m-left-7" id= "r_left_7_2" onClick="pilih1('7','2','#F44336','2')">
+																			<label for="radio_left_7_2"></label>
+																			</div>
+																			</div></td></tr>														
+														
+													</table>
+												</td>
+												<td style="width:10%"></td>
+												<td style="width:45%">
+													<table class="table table-hover table-bordered" id="tabel-soal-2">
+														<thead>
+														<tr id="judul-tabel">
+															<td colspan="2">Gambar 2</td>
+														</thead>
+														<tr id="row2-7-1" class="tr-right-7">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('7','1',2,'1','38','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_7_1">
+																			<input type="radio" name="right[7][1]" value="1" id="r_right_7_1" onClick="pilih2('7','1',2,'1','38','2')" class="m-right-7">
+																			<label for="radio_right_7_1"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('7','1',2,'1','38','2')"><img src="90019_3c097911811794ab0e26949580a6dbde.png"></td></tr><tr id="row2-7-2" class="tr-right-7">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('7','2',2,'2','38','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_7_2">
+																			<input type="radio" name="right[7][2]" value="2" id="r_right_7_2" onClick="pilih2('7','2',2,'2','38','2')" class="m-right-7">
+																			<label for="radio_right_7_2"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('7','2',2,'2','38','2')"><img src="90019_b47f9ca2beb3adc714d068a06dfeaa18.png"></td></tr><tr id="row2-7-3" class="tr-right-7">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('7','3',2,'3','38','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_7_3">
+																			<input type="radio" name="right[7][3]" value="3" id="r_right_7_3" onClick="pilih2('7','3',2,'3','38','2')" class="m-right-7">
+																			<label for="radio_right_7_3"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('7','3',2,'3','38','2')"><img src="79380_94485001f995c6ad6848f90768fa0087.png"></td></tr><tr id="row2-7-4" class="tr-right-7">
+																			<td class="text-center" style="width:50px" onCLick="pilih2('7','4',2,'4','38','2')">
+																			<div class="checkbox icheck-primary" id="radio_right_7_4">
+																			<input type="radio" name="right[7][4]" value="4" id="r_right_7_4" onClick="pilih2('7','4',2,'4','38','2')" class="m-right-7">
+																			<label for="radio_right_7_4"></label>
+																			</div>
+																			</td>
+																			<td onCLick="pilih2('7','4',2,'4','38','2')"><img src="90019_76116f04f2df3a765a46e87453c531d1.png"></td></tr>														
+														
+													</table>
+												</td>
+												</tr>
+											</table>
+											
+											<div><button type="button" class="btn btn-white btn-primary btn-sm btn-round" onClick="resetKunci('7','1')"><i class="ace-icon fa fa-refresh"></i> Ganti Jawaban</button></div>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-8"><div><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml encoding="utf-8" ?><html><body><p>Ari mencoba mengisi gayung di rumahnya dengan air. Gayung diisi air hingga penuh. Setelah itu, air dari gayung ia masukkan ke beberapa gelas.<br>Perhatikan gambar berikut!<br><img src="73280_86b97860e767c954d9c2080511eb65e1.png" alt=""></p>
+<p>Berapa banyak gelas yang diperlukan untuk menampung tiga setengah gayung air? <soal_isian><input type="text" autocomplete="off" value="" title="39" name="isian_8[]" style="margin:1px;background:#eee;width:150px;border-top:0px;border-left:0px;border-right:0px;font-weight:bold;text-align:center" class="soal_isian_8"></soal_isian></p></body></html>
+										
+										</div>								<div>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-9"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p><img src="48600_464f983ff69213103a7bbc1f2d712485.png" alt=""><br>Gambar tersebut menunjukkan permen jeli tusuk dengan isi yang berbeda. Setiap tusuk terdiri dari beberapa buah permen jeli dengan warna yang sama. Satu tusuk isi 3 permen dijual dengan harga Rp2.000,00 dan satu tusuk isi 5 permen dijual dengan harga Rp3.000,00.</p><br />
+<p>Ita membeli 2 tusuk permen jeli isi 5 dan 5 tusuk permen jeli isi 3. Ita membayar dengan 2 lembar uang sepuluh ribuan.&nbsp;Uang kembalian yang diterima Ita adalah &hellip;.</p><br />
+</div>								<div>
+								 <!-- PG -->
+											<table class="table " style="margin-top:0px">
+																								<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('9.','0');">
+													<input id="pilihan_9_0"  onChange="pilihan('9','a','40')" pil="a" name="pilihan9" type="radio"   />
+													<label for="pilihan_9_0"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(9,0);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>16.000,00</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('9.','1');">
+													<input id="pilihan_9_1"  onChange="pilihan('9','b','40')" pil="b" name="pilihan9" type="radio"   />
+													<label for="pilihan_9_1"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(9,1);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>14.000,00</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('9.','2');">
+													<input id="pilihan_9_2"  onChange="pilihan('9','c','40')" pil="c" name="pilihan9" type="radio"   />
+													<label for="pilihan_9_2"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(9,2);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>4.000,00</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="radio icheck-primary" onClick="KlikJawaban('9.','3');">
+													<input id="pilihan_9_3"  onChange="pilihan('9','d','40')" pil="d" name="pilihan9" type="radio"   />
+													<label for="pilihan_9_3"></label>
+													</div>
+											<td style='padding-top:15px;;border:0px;padding:0px;padding-top:5px' onClick="KlikJawaban(9,3);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>2.000,00</p>
+</td></tr>											</table>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-10"><div><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p><img src="48600_464f983ff69213103a7bbc1f2d712485.png" alt=""><br>Gambar tersebut menunjukkan permen jeli tusuk dengan isi yang berbeda. Setiap tusuk terdiri dari beberapa buah permen jeli dengan warna yang sama. Satu tusuk isi 3 permen dijual dengan harga Rp2.000,00 dan satu tusuk isi 5 permen dijual dengan harga Rp3.000,00.</p><br />
+<p>Adi mempunyai uang Rp12.000,00. Ia ingin membeli permen jeli seperti pada gambar untuk 2 adiknya. Supaya kedua adiknya mendapatkan permen sama banyak, maka permen apa saja yang harus dibeli Adi? Pilihlah semua pilihan jawaban yang benar!</p><br />
+</div>								<div>
+								 <!-- PG kompleks checkbox -->
+											<table class="table" style="margin-top:10px">
+																								<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('10.','0');">
+													<input id="pilihan_10_0" class="pilihan10" onChange="pilihan2('10','a','41')" pil="a" name="pilihan10" type="checkbox"  value="A"  />
+													<label for="pilihan_10_0"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(10,0);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>6 tusuk masing-masing isi 3 permen</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('10.','1');">
+													<input id="pilihan_10_1" class="pilihan10" onChange="pilihan2('10','b','41')" pil="b" name="pilihan10" type="checkbox"  value="B"  />
+													<label for="pilihan_10_1"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(10,1);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>3 tusuk masing-masing isi 5 permen dan 1 tusuk isi 3 permen</p>
+</td></tr>													<tr><td style="width:20px;border:0px;padding:0px" >
+													<div class="checkbox icheck-primary" onClick="KlikJawaban2('10.','2');">
+													<input id="pilihan_10_2" class="pilihan10" onChange="pilihan2('10','c','41')" pil="c" name="pilihan10" type="checkbox"  value="C"  />
+													<label for="pilihan_10_2"></label>
+													</div>
+											<td style='padding-top:15px;border:0px;padding:0px' onClick="KlikJawaban2(10,2);"><?xml encoding="utf-8" ?><!--?xml encoding="utf-8" ?--><p>2 tusuk masing-masing isi 5 permen dan 3 tusuk masing-masing isi 3 permen</p>
+</td></tr>											</table>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-11"><div><?xml encoding="utf-8" ?><p><img src="48600_464f983ff69213103a7bbc1f2d712485.png" alt=""><br>Gambar tersebut menunjukkan permen jeli tusuk dengan isi yang berbeda. Setiap tusuk terdiri dari beberapa buah permen jeli dengan warna yang sama. Satu tusuk isi 3 permen dijual dengan harga Rp2.000,00 dan satu tusuk isi 5 permen dijual dengan harga Rp3.000,00.</p><br />
+<p>Surti mempunyai uang senilai Rp20.000,00. Ia ingin menggunakan uang tersebut sebanyak-banyaknya untuk membeli permen dan membagikan kepada 6 orang temannya sama banyak. Permen apa yang harus dibeli Surti? Berikan alasanmu!</p><br />
+</div>								<div>
+								 <!-- Essai Terbuka -->
+																						<p>Jawab :</p>
+											<textarea class="form-control jawaban_essai" rows="4" style="border-radius:5px" name="jawaban_essai[11]" id="jawaban_essai_11" title="11" pre="42"></textarea>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-12"><div><?xml encoding="utf-8" ?><p>Perhatikan gambar berikut!</p><br />
+<p><img src="75835_2c39f026b057e6bc11bdcb682841309e.png" alt=""><br>Gambar tersebut merupakan papan pemutar. Cara memainkannya adalah dengan memutar papan. Setelah papan berhenti, jarum akan menunjuk salah satu bagian.</p><br />
+<p>Setelah papan tersebut diputar, papan warna apa yang paling mungkin ditunjuk oleh jarum pada saat berhenti? Jelaskan jawabanmu!</p><br />
+</div>								<div>
+								 <!-- Essai Terbuka -->
+																						<p>Jawab :</p>
+											<textarea class="form-control jawaban_essai" rows="4" style="border-radius:5px" name="jawaban_essai[12]" id="jawaban_essai_12" title="12" pre="43"></textarea>
+															</div>
+				</div><div class="soal-soal" style="display:none" id="soal-no-13"><div><?xml encoding="utf-8" ?><p>Perhatikan gambar berikut!</p><br />
+<p><img src="75835_2c39f026b057e6bc11bdcb682841309e.png" alt=""><br>Gambar tersebut merupakan papan pemutar. Cara memainkannya adalah dengan memutar papan. Setelah papan berhenti, jarum akan menunjuk salah satu bagian.</p><br />
+<p>Salah seorang anak mencoba memutar papan dengan arah yang berbeda-beda.<br>Tentukan warna papan yang paling mungkin ditunjuk jarum sesuai dengan arah papan diputar!</p><br />
+</div>								<div>
+								 <!-- PG Kompleks > 1 jawaban pilihan -->
+											<table class="table table-bordered table-hover" style="margin-top:10px;">
+											<thead><tr><td class="text-center d-none" style="width:50px">#</td><td>Arah Papan Putar</td><td class="text-center" style="width:100px">Merah</td><td class="text-center" style="width:100px">Biru</td><td class="text-center" style="width:100px">Hijau</td><td class="text-center" style="width:100px">Kuning</td></tr></thead><tr><td class="text-center d-none" style="padding:2px">A.</td><td class="text-left" style="padding:2px;padding-left:10px">Kanan</td>														<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','1','1');">
+															<input  id="pilihan_13_1_1" name="pilihan_13_1" class="pilihan__1" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="1"  />
+															<label for="pilihan_13_1_1"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','1','2');">
+															<input  id="pilihan_13_1_2" name="pilihan_13_1" class="pilihan__1" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="2"  />
+															<label for="pilihan_13_1_2"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','1','3');">
+															<input  id="pilihan_13_1_3" name="pilihan_13_1" class="pilihan__1" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="3"  />
+															<label for="pilihan_13_1_3"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','1','4');">
+															<input  id="pilihan_13_1_4" name="pilihan_13_1" class="pilihan__1" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="4"  />
+															<label for="pilihan_13_1_4"></label>
+															</div>
+														</td>
+													</tr><tr><td class="text-center d-none" style="padding:2px">B.</td><td class="text-left" style="padding:2px;padding-left:10px">Kiri</td>														<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','2','1');">
+															<input  id="pilihan_13_2_1" name="pilihan_13_2" class="pilihan__2" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="1"  />
+															<label for="pilihan_13_2_1"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','2','2');">
+															<input  id="pilihan_13_2_2" name="pilihan_13_2" class="pilihan__2" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="2"  />
+															<label for="pilihan_13_2_2"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','2','3');">
+															<input  id="pilihan_13_2_3" name="pilihan_13_2" class="pilihan__2" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="3"  />
+															<label for="pilihan_13_2_3"></label>
+															</div>
+														</td>
+																											<td class="text-center" style="padding:2px">
+															<div class="checkbox icheck-primary" onClick="KlikJawaban3('13.','2','4');">
+															<input  id="pilihan_13_2_4" name="pilihan_13_2" class="pilihan__2" onChange="pilihan3('13','2','44','ABCDEFGHIJK')" type="radio" value="4"  />
+															<label for="pilihan_13_2_4"></label>
+															</div>
+														</td>
+													</tr>											</table>
+															</div>
+				</div>			</div>
+		  </div>
+		  
+		  <div class="row pl-3 pr-3 pb-2 mb-2"> 
+			<div class="col"  style="border-bottom:1px solid #eee"></div>
+		  </div>
+		  
+		  <div class="row pb-2 pt-2 mt-2 btn-bawah"> 
+			<div class="col text-center"  style="">
+				<button class="btn btn-danger btn-round btn-md btn-navigasi" style="border-radius:30px;" onClick="prevSoal()"><i class="fa fa-chevron-circle-left"></i> <span class="d-none d-sm-inline-block">Soal sebelumnya</span></button>
+			</div>
+			<div class="col text-center"  style="">
+				<button class="btn btn-warning btn-round btn-md btn-navigasi" style="border-radius:30px;color:#fff;"><input type="checkbox" onClick="raguRagu()" id="c_ragu_ragu" value=""/> <span class="d-none d-sm-inline-block">Ragu-ragu</span<</button>
+			</div>
+			<div class="col text-center"  style="">
+				<button class="btn btn-primary btn-round btn-md btn-navigasi" style="border-radius:30px;" onClick="nextSoal()" id="nextSoal"> <span class="d-none d-sm-inline-block">Soal berikutnya</span> <i class="fa fa-chevron-circle-right"></i></button>
+			</div>
+		  </div>
+		</div>
+	</div>
+	 
+  </div> 
+</div>
+
+<div class="modal fadeIn" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background:#dfe6e9">
+        <h5 class="modal-title">Daftar Soal</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-center pb-5 pt-5">
+		<form id="formJawaban">
+         				<span class="d-none" id="tmp_answer_1"></span>
+				<span class="d-none" id="ragu_answer_1"></span>
+				<input type="hidden" name="jawaban_no[1]" id="input_jawaban_no_1" value="1">
+								<div id="jawaban-no-1" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('1')">1					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer1" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_2"></span>
+				<span class="d-none" id="ragu_answer_2"></span>
+				<input type="hidden" name="jawaban_no[2]" id="input_jawaban_no_2" value="2">
+								<div id="jawaban-no-2" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('2')">2					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer2" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_3"></span>
+				<span class="d-none" id="ragu_answer_3"></span>
+				<input type="hidden" name="jawaban_no[3]" id="input_jawaban_no_3" value="3">
+								<div id="jawaban-no-3" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('3')">3					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer3" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_4"></span>
+				<span class="d-none" id="ragu_answer_4"></span>
+				<input type="hidden" name="jawaban_no[4]" id="input_jawaban_no_4" value="4">
+								<div id="jawaban-no-4" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('4')">4					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer4" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_5"></span>
+				<span class="d-none" id="ragu_answer_5"></span>
+				<input type="hidden" name="jawaban_no[5]" id="input_jawaban_no_5" value="5">
+								<div id="jawaban-no-5" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('5')">5					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer5" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_6"></span>
+				<span class="d-none" id="ragu_answer_6"></span>
+				<input type="hidden" name="jawaban_no[6]" id="input_jawaban_no_6" value="6">
+								<div id="jawaban-no-6" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('6')">6					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer6" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_7"></span>
+				<span class="d-none" id="ragu_answer_7"></span>
+				<input type="hidden" name="jawaban_no[7]" id="input_jawaban_no_7" value="7">
+								<div id="jawaban-no-7" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('7')">7					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer7" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_8"></span>
+				<span class="d-none" id="ragu_answer_8"></span>
+				<input type="hidden" name="jawaban_no[8]" id="input_jawaban_no_8" value="8">
+								<div id="jawaban-no-8" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('8')">8					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer8" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_9"></span>
+				<span class="d-none" id="ragu_answer_9"></span>
+				<input type="hidden" name="jawaban_no[9]" id="input_jawaban_no_9" value="9">
+								<div id="jawaban-no-9" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('9')">9					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer9" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_10"></span>
+				<span class="d-none" id="ragu_answer_10"></span>
+				<input type="hidden" name="jawaban_no[10]" id="input_jawaban_no_10" value="10">
+								<div id="jawaban-no-10" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('10')">10					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer10" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 <br />				<span class="d-none" id="tmp_answer_11"></span>
+				<span class="d-none" id="ragu_answer_11"></span>
+				<input type="hidden" name="jawaban_no[11]" id="input_jawaban_no_11" value="11">
+								<div id="jawaban-no-11" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('11')">11					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer11" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_12"></span>
+				<span class="d-none" id="ragu_answer_12"></span>
+				<input type="hidden" name="jawaban_no[12]" id="input_jawaban_no_12" value="12">
+								<div id="jawaban-no-12" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('12')">12					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer12" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 				<span class="d-none" id="tmp_answer_13"></span>
+				<span class="d-none" id="ragu_answer_13"></span>
+				<input type="hidden" name="jawaban_no[13]" id="input_jawaban_no_13" value="13">
+								<div id="jawaban-no-13" class="btn  btn-outline-dark  btn-sm mb-2 mr-2 btn-lihat-soal" style="width:30px;height:30px;padding-top:5px;position:relative" onClick="lihatSoal('13')">13					<div class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"><i class="fa fa-check"></i></div>
+					<div id="answer13" class="badge badge-light d-none" style="height:15px;width:15px;font-size:9px;border-radius:50%;position:absolute;top:-5px;right:-5px;border:1px solid #000;background:#fff"></div>
+				</div>
+				
+		 		 </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="infoSoal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background:#dfe6e9">
+        <h5 class="modal-title">Informasi Soal</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-center pb-5 pt-5">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fadeIn" id="timeoutDialog" role="dialog"  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body text-center pb-2 pt-5">
+		<h5 class="modal-title" style="text-align:center">PERHATIAN !!</h5>
+		<p>Waktu tes sudah habis !</p>
+      </div>
+	  <div class="modal-footer text-center">
+		<button class="btn btn-danger" onClick="selesaikanTes()">Ok, Lanjutkan !</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="c-svg" id="c-svg-1"></div><div class="c-svg" id="c-svg-2"></div><div class="c-svg" id="c-svg-3"></div><div class="c-svg" id="c-svg-4"></div><div class="c-svg" id="c-svg-5">				<svg class="svg" id="svg_5_1" style="position:absolute;left:300px;width:135px;height:100px;border:0px solid green;z-index:1"><line style="position:absolute;display:none" x1="50" y1="50" x2="100" y2="100" id="line_5_1"  stroke="red" class="line-5" /></svg>
+				<svg class="svg" id="svg_5_2" style="position:absolute;left:300px;width:135px;height:100px;border:0px solid green;z-index:1"><line style="position:absolute;display:none" x1="50" y1="50" x2="100" y2="100" id="line_5_2"  stroke="red" class="line-5" /></svg>
+				<svg class="svg" id="svg_5_3" style="position:absolute;left:300px;width:135px;height:100px;border:0px solid green;z-index:1"><line style="position:absolute;display:none" x1="50" y1="50" x2="100" y2="100" id="line_5_3"  stroke="red" class="line-5" /></svg>
+				</div><div class="c-svg" id="c-svg-6"></div><div class="c-svg" id="c-svg-7">				<svg class="svg" id="svg_7_1" style="position:absolute;left:300px;width:135px;height:100px;border:0px solid green;z-index:1"><line style="position:absolute;display:none" x1="50" y1="50" x2="100" y2="100" id="line_7_1"  stroke="red" class="line-7" /></svg>
+				<svg class="svg" id="svg_7_2" style="position:absolute;left:300px;width:135px;height:100px;border:0px solid green;z-index:1"><line style="position:absolute;display:none" x1="50" y1="50" x2="100" y2="100" id="line_7_2"  stroke="red" class="line-7" /></svg>
+				</div><div class="c-svg" id="c-svg-8"></div><div class="c-svg" id="c-svg-9"></div><div class="c-svg" id="c-svg-10"></div><div class="c-svg" id="c-svg-11"></div><div class="c-svg" id="c-svg-12"></div><div class="c-svg" id="c-svg-13"></div>
+<div  style="position:fixed;top:0px;left:0px;right:0px;bottom:0px;background:#fff;opacity:0.5;z-index:99999;" id="loader">
+<img class="loader" src="loader2.gif">
+</div>
+
+
+<style>
+	
+	@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+	@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (max-width:641px)  { 
+		/* tablet, landscape iPad, lo-res laptops ands desktops */  
+		.mataujian{text-align:left} 
+		#formContent{padding-left:10px;padding-right:10px}
+		.row-atas {text-align:center;}
+		#isisoal img {width:100%;}
+	}
+	@media (min-width:641px)  { 
+		/* tablet, landscape iPad, lo-res laptops ands desktops */  
+		.container-fluid{ padding-left:50px;padding-right:50px} 
+		.mataujian{text-align:right} 
+		#formContent{padding-left:50px;padding-right:50px} 
+		.btn-navigasi {width:180px;}
+		.cont-btn-informasi{text-align:right}
+		
+	}
+	@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+			
+	/* STRUCTURE */
+	.loader {
+	  margin: 0;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	}
+	
+	.wrapper {
+	  display: flex;
+	  align-items: center;
+	  flex-direction: column; 
+	  justify-content: center;
+	  width: 100%;
+	  min-height: 100%;
+	  padding: 20px;
+	  margin-top:-80px;
+	}
+
+	#formContent {
+	  -webkit-border-radius: 10px 10px 10px 10px;
+	  border-radius: 10px 10px 10px 10px;
+	  background: #fff;
+	  position: relative;
+	  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+	  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+	  text-align: center;
+	}
+
+	
+
+
+	/* TABS */
+
+	h2.inactive {
+	  color: #cccccc;
+	}
+
+	h2.active {
+	  color: #0d0d0d;
+	  border-bottom: 2px solid #5fbae9;
+	}
+	
+	input[type=text] {
+	  border: none;
+	  color: #0d0d0d;
+	  text-decoration: none;
+	  border-radius:0px;
+	  border-bottom:1px solid #eee;
+	  background:transparent;
+	}
+	
+
+	/* ANIMATIONS */
+
+	/* Simple CSS3 Fade-in-down Animation */
+	.fadeInDown {
+	  -webkit-animation-name: fadeInDown;
+	  animation-name: fadeInDown;
+	  -webkit-animation-duration: 1s;
+	  animation-duration: 1s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	}
+
+	@-webkit-keyframes fadeInDown {
+	  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	  }
+	  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	  }
+	}
+
+	@keyframes fadeInDown {
+	  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	  }
+	  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	  }
+	}
+
+	/* Simple CSS3 Fade-in Animation */
+	@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+	@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+	@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+	.fadeIn {
+	  opacity:0;
+	  -webkit-animation:fadeIn ease-in 1;
+	  -moz-animation:fadeIn ease-in 1;
+	  animation:fadeIn ease-in 1;
+
+	  -webkit-animation-fill-mode:forwards;
+	  -moz-animation-fill-mode:forwards;
+	  animation-fill-mode:forwards;
+
+	  -webkit-animation-duration:1s;
+	  -moz-animation-duration:1s;
+	  animation-duration:1s;
+	}
+
+	.fadeIn.first {
+	  -webkit-animation-delay: 0.4s;
+	  -moz-animation-delay: 0.4s;
+	  animation-delay: 0.4s;
+	}
+
+	.fadeIn.second {
+	  -webkit-animation-delay: 0.6s;
+	  -moz-animation-delay: 0.6s;
+	  animation-delay: 0.6s;
+	}
+
+	.fadeIn.third {
+	  -webkit-animation-delay: 0.8s;
+	  -moz-animation-delay: 0.8s;
+	  animation-delay: 0.8s;
+	}
+
+	.fadeIn.fourth {
+	  -webkit-animation-delay: 1s;
+	  -moz-animation-delay: 1s;
+	  animation-delay: 1s;
+	}
+
+	/* Simple CSS3 Fade-in Animation */
+	.underlineHover:after {
+	  display: block;
+	  left: 0;
+	  bottom: -10px;
+	  width: 0;
+	  height: 2px;
+	  background-color: #56baed;
+	  content: "";
+	  transition: width 0.2s;
+	}
+
+	.underlineHover:hover {
+	  color: #0d0d0d;
+	}
+
+	.underlineHover:hover:after{
+	  width: 100%;
+	}
+	
+	.cfont {
+		cursor:pointer;
+	}
+	
+	
+	///
+	
+</style>
+  
+<script type="text/javascript" src="jquery.2.1.1.min.js"></script>
+<script src="jquery.timer.js"></script>
+  
+<script>
+	
+	$(document).ready(function() {
+		$('#loader').fadeOut();
+	});
+	var selected = 1;
+	var jumlah_soal = 13;
+	function lihatSoal(nomor) {
+		$('.soal-soal').css('display','none');
+		if (nomor=='') {
+			nomor = selected;
+		} 
+		$('#soal-no-'+nomor).css('display','');
+		selected = nomor;
+		$('#noSoal').html(nomor);
+		
+		if ($('#jawaban-no-'+nomor).hasClass('btn-warning')) {
+			$('#c_ragu_ragu').prop('checked',true);
+		} else {
+			$('#c_ragu_ragu').prop('checked',false);
+		}
+		
+		for (i=1;i<=jumlah_soal;i++){
+			var cccc= $('#tmp_answer_'+i).html();
+			if (cccc != '') $('#jawaban-no-'+i).addClass('btn-dark');
+			var cccc= $('#ragu_answer_'+i).html();
+			if (cccc != '') {
+				$('#jawaban-no-'+i).addClass('btn-warning');
+				$('#jawaban-no-'+i).removeClass('btn-dark');
+			}
+		}
+		//$('.btn-lihat-soal').removeClass('btn-dark');
+		$('#jawaban-no-'+nomor).removeClass('btn-warning');
+		$('#jawaban-no-'+nomor).removeClass('btn-dark');
+		$('.btn-lihat-soal').removeClass('btn-primary');
+		
+		$('#jawaban-no-'+nomor).addClass('btn-primary');
+		
+		window.scrollTo(0, 0);
+		$('.c-svg').fadeOut();
+		redrawline(selected);
+	}
+	
+	function nextSoal() {
+		if (selected < jumlah_soal) {
+			selected++;		
+			lihatSoal(selected);
+		} else {
+			
+			selesaikanTes();
+		}
+	}
+	
+	function prevSoal() {
+		if (selected > 1) {
+			selected--;
+			lihatSoal(selected);
+		}
+	}
+	
+	function raguRagu() {
+		if ($('#c_ragu_ragu').is(':checked')) {
+			$('#jawaban-no-'+selected).removeClass('btn-outline-dark');
+			$('#jawaban-no-'+selected).removeClass('btn-dark');
+			$('#jawaban-no-'+selected).addClass('btn-warning');
+			$('#ragu_answer_'+selected).html('1');
+			save_ragu(selected,'1');
+		} else {
+			$('#ragu_answer_'+selected).html('');
+			$('#jawaban-no-'+selected).removeClass('btn-warning');
+			$('#jawaban-no-'+selected).removeClass('btn-outline-dark');
+			$('#jawaban-no-'+selected).removeClass('btn-dark');
+			
+			if ($('#answer'+selected).html() == '')
+			{
+				$('#jawaban-no-'+selected).addClass('btn-outline-dark');
+			}
+			else
+			{
+				$('#jawaban-no-'+selected).addClass('btn-dark');
+			}
+			
+			save_ragu(selected,'');
+			
+		}
+	}
+	
+	function trigger_ragu(nomor)
+	{
+		if ($('#jawaban-no-'+nomor).hasClass('btn-warning')) {
+			$('#c_ragu_ragu').prop('checked',true);
+			$('#jawaban-no-'+nomor).removeClass('btn-outline-dark');
+			$('#jawaban-no-'+nomor).removeClass('btn-dark');
+			$('#jawaban-no-'+nomor).addClass('btn-warning');
+		} else {
+			$('#c_ragu_ragu').prop('checked',false);
+			$('#jawaban-no-'+nomor).removeClass('btn-warning');
+			$('#jawaban-no-'+nomor).removeClass('btn-outline-dark');
+			$('#jawaban-no-'+nomor).removeClass('btn-dark');
+			
+			if ($('#answer'+nomor).html() == '')
+			{
+				$('#jawaban-no-'+nomor).addClass('btn-outline-dark');
+			}
+			else
+			{
+				$('#jawaban-no-'+nomor).addClass('btn-dark');
+			}
+		}
+		
+	}
+	
+	lihatSoal('');
+	
+	function selesaikanTes() {alert('111')
+	
+	return false
+		$.ajax({ 
+		   type: "POST",
+		   dataType: "html",
+		   data : $('#formJawaban').serialize(),
+		   url: "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm/finishtes?ses_id=662f91422ba9a7d76dd496facf75f73abe4dfd74",
+		   cache: false, 
+		   beforeSend: function(){
+			   $('#nextSoal').prop('disabled',true);
+			   $('#nextSoal').html('Silahkan tunggu ... !');
+			   $('#loader').fadeIn();
+			},
+			complete: function(){
+			},
+			success: function(result){
+				//alert(result);
+				if (result=='error') {
+					alert('Oops ada kesalahan! \rSilahkan ulangi !');
+					$('#nextSoal').prop('disabled',false);
+					$('#nextSoal').prop('enabled',true);
+					$('#nextSoal').html('Soal berikutnya');
+					$('#loader').fadeOut();
+				}
+				else
+					window.location = result;
+		   }
+		});
+	}
+
+	function changeFont(s,d)
+	{
+		$('#isisoal').css("font-size", s + "px");
+		$('.cfont').css("font-weight", "normal");
+		$('#'+d).css("font-weight", "bold");
+	}
+			
+	var RemainTime = new (function() {
+		var $countdown;
+		var $form;
+		var incrementTime = 60;
+		var globalTime = 3553 * 1000; // 50 seconds (in milliseconds)
+		var currentTime = globalTime;
+		var DurationTime = 3553 * 60000; // 5 minutes (in milliseconds)
+
+
+		$(function() {
+
+			// Setup the timer
+			$countdown = $('#countdown');
+			RemainTime.Timer = $.timer(updateTimer, incrementTime, true);
+
+		});
+
+		function updateTimer() {
+
+			// Output timer position
+			var timeString = formatTime(currentTime);
+			$countdown.html(timeString);
+			// If timer is complete, trigger alert
+			if (currentTime == 0) {
+				jQuery.noConflict();
+				$('#timeoutDialog').modal();
+				//$('#timeoutDialog').modal('show');
+				RemainTime.Timer.stop();
+				//disable_all();
+				//bootbox_timeout();
+				
+				return;
+			}
+			// Increment timer position
+			currentTime -= incrementTime;
+			if (currentTime < 0) currentTime = 0;
+
+		}
+	});
+
+	// Common functions
+	function pad(number, length) {
+		var str = '' + number;
+		while (str.length < length) {str = '0' + str;}
+		return str;
+	}
+	function formatTime(time) {
+		time = time / 10;
+		var hour= parseInt(time / 360000),
+			min = parseInt(time / 6000) - (hour * 60),
+			sec = parseInt(time / 100) - (min * 60) - (hour * 3600),
+			hundredths = pad(time - (sec * 100) - (min * 6000) - (hour * 360000), 2);
+		return (hour > 0 ? pad(hour, 2) : "00") + ":" + (min > 0 ? pad(min, 2) : "00") + ":" + pad(sec, 2) + "";
+	}
+	
+	function KlikJawaban(no,i)
+	{
+		$('#pilihan_'+no+'_'+i).trigger('click');
+	}
+	
+	
+	function KlikJawaban2(no,i)
+	{
+		$('#pilihan_'+'_'+no+'_'+i).trigger('click');
+	}
+	
+	function KlikJawaban3(no,i,j)
+	{
+		$('#pilihan_'+'_'+no+'_'+i+'_'+j).trigger('click');
+	}
+	
+	
+	function pilihan(n,v,i) {
+		if (v.toUpperCase() == '')
+			$("#answer"+n).html('');
+		else {
+			$("#answer"+n).html('<i class="fa fa-check"></i>');
+			$("#answer"+n).removeClass('d-none');
+		}
+		
+		$("#tmp_answer_"+n).html(v.toUpperCase());
+		//$("#answer"+n).css('color','#000');
+		//pushPromise(i,v);
+		$("#jawaban-no-"+n).removeClass('btn-outline-dark');
+		$("#jawaban-no-"+n).addClass('btn-dark');
+		//$("#jawaban-no-"+n).addClass('text-white');
+		// $("#cont-answer"+n).css('color','#fff');
+
+		save_answer(n,v.toUpperCase());
+		trigger_ragu(selected);
+
+	}
+	
+	
+	function pilihan2(n,v,i) {
+		
+		var jawaban = $('.pilihan'+n+':checked')
+		   .map(function() { return $(this).val() })
+		   .get()
+		   .join(";");
+		
+		if (jawaban == '') {
+			$("#answer"+n).html('');
+			$("#jawaban-no-"+n).removeClass('btn-dark');
+			$("#jawaban-no-"+n).addClass('btn-outline-dark');
+		}
+		else {
+			$("#answer"+n).html('<i class="fa fa-check"></i>');
+			$("#jawaban-no-"+n).removeClass('btn-outline-dark');
+			$("#jawaban-no-"+n).addClass('btn-dark');
+			$("#answer"+n).removeClass('d-none');
+		}
+		
+		$("#tmp_answer_"+n).html(jawaban);
+			   
+		// $("#answer"+n).css('color','#000');
+		
+		// pushPromise(i,jawaban);
+		
+		
+		// $("#cont-answer"+n).css('background','#000');
+		// $("#cont-answer"+n).css('color','#fff');
+		save_answer(n,jawaban);
+		 trigger_ragu(selected);
+		
+
+	}
+	
+	function pilihan3(n,total,s, arr) {
+		var jawaban = '';
+		for (i=1;i<=total;i++)  {
+			var v = $('input[name="pilihan_'+n+'_'+i+'"]:checked').val();
+			if (v != undefined && v != null) jawaban += arr[(i-1)]+'|'+v + ';';
+		}
+		jawaban = jawaban.substring(0, jawaban.length-1);
+		
+		if (jawaban == '')
+			$("#answer"+n).html('');
+		else {
+			$("#answer"+n).html('<i class="fa fa-check"></i>');
+			$("#answer"+n).removeClass('d-none');
+		}
+		
+		$("#tmp_answer_"+n).html(jawaban);
+			   
+		// $("#answer"+n).css('color','#000');
+		// pushPromise(s,jawaban);
+		
+		$("#jawaban-no-"+n).removeClass('btn-outline-dark');
+	    $("#jawaban-no-"+n).addClass('btn-dark');
+			
+		// $("#cont-answer"+n).css('background','#000');
+		// $("#cont-answer"+n).css('color','#fff');
+		save_answer(n,jawaban);
+		 trigger_ragu(selected);
+		
+	}
+	
+			$('.soal_isian_4').focusout(function() {
+			
+			var s = $('.soal_isian_4').attr('title');
+			var jawaban = $('input[name="isian_4[]"]')
+			   .map(function() { return $(this).val() })
+			   .get()
+			   .join(";");
+			   
+			 //alert(jawaban);
+			
+			if (jawaban == '')
+				$("#answer4").html('');
+			else {
+				$("#answer4").html('<i class="fa fa-check"></i>');
+				$("#answer4").removeClass('d-none');
+			}
+			
+			$("#tmp_answer_4").html(jawaban);
+				   
+			//$("#answer4").css('color','#000');
+			//pushPromise('5',jawaban);
+			//$("#cont-answer4").css('background','#000');
+			//$("#cont-answer4").css('color','#fff');
+			save_answer('4',jawaban);
+			trigger_ragu(selected);
+			
+		}).blur(function() {});
+					var left = '';
+			//var right = '';
+			eval('var right_5' + '= "";');
+			//var warna1 = '';
+			eval('var warna1_5' + '= "";');
+			//var id1 = '';
+			eval('var id1_5' + '= "";');
+			//var pos1 = '';
+			eval('var pos1_5' + '= "";');
+			//var pos11 = '';
+			eval('var pos11_5' + '= "";');
+			//var dipilih1 = [];
+			eval('var dipilih1_5' + '= [];');
+			//var dipilih2 = [];
+			eval('var dipilih2_5' + '= [];');
+			//var order1='';
+			eval('var order1_5' + '= "";');
+			//var free1 = true;
+			eval('var free1_5' + '= true;');
+			//var free = true;
+			eval('var free_5' + '= true;');
+			//var jawab = '';
+			eval('var jawab_5' + '= "";');
+			//var jawaban = '';
+			eval('var jawaban_5' + '= "";');
+			
+				var left = '';
+			//var right = '';
+			eval('var right_7' + '= "";');
+			//var warna1 = '';
+			eval('var warna1_7' + '= "";');
+			//var id1 = '';
+			eval('var id1_7' + '= "";');
+			//var pos1 = '';
+			eval('var pos1_7' + '= "";');
+			//var pos11 = '';
+			eval('var pos11_7' + '= "";');
+			//var dipilih1 = [];
+			eval('var dipilih1_7' + '= [];');
+			//var dipilih2 = [];
+			eval('var dipilih2_7' + '= [];');
+			//var order1='';
+			eval('var order1_7' + '= "";');
+			//var free1 = true;
+			eval('var free1_7' + '= true;');
+			//var free = true;
+			eval('var free_7' + '= true;');
+			//var jawab = '';
+			eval('var jawab_7' + '= "";');
+			//var jawaban = '';
+			eval('var jawaban_7' + '= "";');
+			
+			$('.soal_isian_8').focusout(function() {
+			
+			var s = $('.soal_isian_8').attr('title');
+			var jawaban = $('input[name="isian_8[]"]')
+			   .map(function() { return $(this).val() })
+			   .get()
+			   .join(";");
+			   
+			 //alert(jawaban);
+			
+			if (jawaban == '')
+				$("#answer8").html('');
+			else {
+				$("#answer8").html('<i class="fa fa-check"></i>');
+				$("#answer8").removeClass('d-none');
+			}
+			
+			$("#tmp_answer_8").html(jawaban);
+				   
+			//$("#answer8").css('color','#000');
+			//pushPromise('39',jawaban);
+			//$("#cont-answer8").css('background','#000');
+			//$("#cont-answer8").css('color','#fff');
+			save_answer('8',jawaban);
+			trigger_ragu(selected);
+			
+		}).blur(function() {});
+			
+	function pilih1(no, id, warna, order) {
+			
+			// if (window['right_'+no] == '') {
+				// $('.m-left-'+no).prop('checked', false);
+				// $('.tr-left-'+no).css('background','');
+			// }
+			//if (window['dipilih1_'+no].indexOf(id) >=0) window['free1_'+no]=false;
+			if (window['free1_'+no]) {
+				window['free1_'+no] = false;
+				$('#r_left_'+no+'_'+id).prop('checked', true);
+				$('#row1-'+no+'-'+id).css('background',warna);
+				window['pos1_'+no] = $('#r_left_'+no+'_'+id).offset();
+				window['pos11_'+no] = $('#r_left_'+no+'_'+id).position();
+				window['warna1_'+no] = warna;
+				window['id1_'+no] = id;
+				window['order1_'+no] = order;
+				window['dipilih1_'+no].push(id);
+				window['jawab_'+no] = id;
+			}
+			
+	}
+	
+	function removeA(arr) {
+		var what, a = arguments, L = a.length, ax;
+		while (L > 1 && arr.length) {
+			what = a[--L];
+			while ((ax= arr.indexOf(what)) !== -1) {
+				arr.splice(ax, 1);
+			}
+		}
+		return arr;
+	}
+	
+	function rgb2hex(rgb) {
+		rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		function hex(x) {
+			return ("0" + parseInt(x).toString(16)).slice(-2);
+		}
+		return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+	}
+	
+	
+	
+	function pilih2(no, id,tipe,order,s, ps) {
+		var _c_pilih = $('#r_right_'+no+'_'+id).prop('checked');
+		if (_c_pilih==true) {
+			//alert('1');
+			
+			var id1 =  window['pasangan_'+no+'_'+id];
+			window['free1_'+no] = false;
+			//$('#r_left_'+no+'_'+id).prop('checked', true);
+			var warna11 = rgb2hex($('#row2-'+no+'-'+id).css('background-color'));
+			window['warna1_'+no] = warna11;
+			window['pos1_'+no] = $('#r_left_'+no+'_'+id1).offset();
+			window['pos11_'+no] = $('#r_left_'+no+'_'+id1).position();
+			var cc = id1+";"+id+'|';
+			var ddd = window['jawaban_'+no];
+			dd = ddd.replace(cc,"");
+			window['jawaban_'+no] = dd;
+			
+			window['id1_'+no] = id1;
+			window['free1_'+no] = false;
+			window['right_'+no] = '';
+			window['free_'+no] = true;
+			//delete window['dipilih2_'+no][id];
+			//window['dipilih2_'+no].remove(id);
+			removeA(window['dipilih2_'+no], id);
+			//$('#r_right_'+no+'_'+id).prop('checked', false);
+			//$('.line-'+no).css('display','none');
+			var xx = '#line_'+no+'_'+window['id1_'+no];
+			//alert(xx);
+			$(xx).css('display','none');
+			$('#r_right_'+no+'_'+id).prop('checked', false);
+			$('#row2-'+no+'-'+id).css('background','#ffffff');
+		}
+		else 
+		{
+			//alert('2');
+			window['free_'+no] = true;
+			if (window['dipilih2_'+no].indexOf(id) >=0) window['free_'+no]=false;
+			//alert(2);
+			
+			if ((window['id1_'+no] != '') && window['free_'+no] && (window['right_'+no] == '')) {
+				//alert(3);
+				window['free1_'+no] = true;
+				window['right_'+no] = '';
+				eval('var pasangan_'+no+'_'+id + '= "";');
+				window['pasangan_'+no+'_'+id] = window['id1_'+no];
+				window['jawaban_'+no] = window['jawaban_'+no]+ window['id1_'+no] +';'+ id +'|';
+				window['dipilih2_'+no].push(id);
+				$('#r_right_'+no+'_'+id).prop('checked', true);
+				$('#row2-'+no+'-'+id).css('background',window['warna1_'+no]);
+				$('#r_right_'+no+'_'+id).val(window['id1_'+no]+';'+id);
+				
+				pos2 = $('#r_right_'+no+'_'+id).offset();
+				pos22 = $('#r_right_'+no+'_'+id).position();
+				$('#svg_'+no+'_'+window['id1_'+no]).css('left',window['pos1_'+no].left);
+				$('#line_'+no+'_'+window['id1_'+no]).fadeIn();
+				if (window['pos1_'+no].top > pos2.top) {
+					$('#line_'+no+'_'+window['id1_'+no])
+						.attr('x1',0)
+						.attr('y1',window['pos1_'+no].top-pos2.top)
+						.attr('x2',Math.abs(window['pos1_'+no].left-pos2.left)-20)
+						.attr('y2',0)
+						.attr('stroke',window['warna1_'+no])
+						;
+					$('#svg_'+no+'_'+window['id1_'+no]).css('top',pos2.top);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('left',window['pos1_'+no].left+20);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('height',Math.abs(window['pos1_'+no].top-pos2.top)*2+10);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('width',Math.abs(window['pos1_'+no].left-pos2.left)-20);
+				} else {
+					$('#line_'+no+'_'+window['id1_'+no])
+						.attr('x1',0)
+						.attr('y1',0)
+						.attr('x2',Math.abs(window['pos1_'+no].left-pos2.left)-20)
+						.attr('y2',Math.abs(window['pos1_'+no].top-pos2.top))
+						.attr('stroke',window['warna1_'+no])
+						;
+					$('#svg_'+no+'_'+window['id1_'+no]).css('top',window['pos1_'+no].top);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('left',window['pos1_'+no].left+20);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('height',Math.abs(window['pos1_'+no].top-pos2.top)*2+10);
+					$('#svg_'+no+'_'+window['id1_'+no]).css('width',Math.abs(window['pos1_'+no].left-pos2.left)-20);
+				}
+				
+				
+				window['id1_'+no] = '';
+				jawaban = window['jawaban_'+no];
+				n = no;
+				
+				if (jawaban == '')
+					$("#answer"+n).html('');
+				else {
+					$("#answer"+n).html('<i class="fa fa-check"></i>');
+					$("#answer"+n).removeClass('d-none');
+				}
+				
+				//$("#answer"+n).css('color','#000');
+				
+				
+					$("#tmp_answer_"+n).html(jawaban);
+					if (ps == '2')	   {
+						save_answer(n,jawaban);
+						//pushPromise(s,jawaban);
+					}
+				
+				// $("#cont-answer"+n).css('background','#000');
+				// $("#cont-answer"+n).css('color','#fff');
+				
+				trigger_ragu(selected);
+
+			} else {
+				if (tipe==2)
+				$('#r_right_'+no+'_'+id).prop('checked', false);
+			}
+		
+		}
+		
+	}
+	
+			eval('var tipesoal_pencocokan_1 = "1"');
+			eval('var tipesoal_pencocokan_2 = "2"');
+			eval('var tipesoal_pencocokan_3 = "3"');
+			eval('var tipesoal_pencocokan_4 = "4"');
+			eval('var tipesoal_pencocokan_5 = "5"');
+			
+		eval('var soal_pencocokan_5 = "6"');
+		eval('var jawaban_pencocokan_5 = ""');
+		eval('var warna_pencocokan_5 = ["#1E88E5","#00BCD4","#F44336","#4CAF50","#FF5722","#E91E63","#9C27B0","#673AB7","#5C6BC0","#03A9F4","#FF9800","#0277BD"]');
+								
+			eval('var tipesoal_pencocokan_6 = "7"');
+			eval('var tipesoal_pencocokan_7 = "5"');
+			
+		eval('var soal_pencocokan_7 = "38"');
+		eval('var jawaban_pencocokan_7 = ""');
+		eval('var warna_pencocokan_7 = ["#1E88E5","#00BCD4","#F44336","#4CAF50","#FF5722","#E91E63","#9C27B0","#673AB7","#5C6BC0","#03A9F4","#FF9800","#0277BD"]');
+								
+			eval('var tipesoal_pencocokan_8 = "4"');
+			eval('var tipesoal_pencocokan_9 = "1"');
+			eval('var tipesoal_pencocokan_10 = "2"');
+			eval('var tipesoal_pencocokan_11 = "7"');
+			eval('var tipesoal_pencocokan_12 = "7"');
+			eval('var tipesoal_pencocokan_13 = "3"');
+		
+	function redrawline(no) {
+		var tmp_tipesoal = window['tipesoal_pencocokan_'+no];
+		if (tmp_tipesoal == 5) {
+			resetKunci(no,'');
+			var tmp = $('#tmp_answer_'+no).html();//window['jawaban_pencocokan_'+no];
+			var tmp_warna = window['warna_pencocokan_'+no];
+			var tmp_soal = window['soal_pencocokan_'+no];
+			var arr_tmp = tmp.split('|');
+			for (i=0;i<arr_tmp.length;i++) {
+				if (arr_tmp[i].trim() != '') {
+					var arr_tmp2 = arr_tmp[i].split(';');
+					pilih1(no,arr_tmp2[0], tmp_warna[i], i);
+					pilih2(no,arr_tmp2[1], '2', arr_tmp2[1],tmp_soal,'1');
+				}
+			}
+			
+			$('#c-svg-'+no).fadeIn();
+		}
+	}
+	
+	
+	function resetKunci(no, tipe) {
+		left = '';
+		window['right_'+no] = '';
+		window['warna1_'+no] = '';
+		window['id1_'+no] = '';
+		window['pos1_'+no] = '';
+		window['pos11_'+no] = '';
+		window['free1_'+no] = true;
+		window['free_'+no] = true;
+		window['dipilih1_'+no] = [];
+		window['dipilih2_'+no] = [];
+		$('.tr-left-'+no).css('background','');
+		$('.tr-right-'+no).css('background','');
+		$('.line-'+no).css('display','none');
+		window['jawab_'+no] = '';
+		window['jawaban_'+no] = '';
+		window['order1_'+no] = '';
+		$('.m-left-'+no).prop('checked', false);
+		$('.m-right-'+no).prop('checked', false);
+		if (tipe == '1') $("#tmp_answer_"+no).html('');
+		$("#answer"+no).html('');
+		$("#jawaban-no-"+no).removeClass('btn-dark');
+		$("#jawaban-no-"+no).addClass('btn-outline-dark');
+		
+	};
+	
+	
+	$('.jawaban_essai').focusout(function() {
+		var no = this.title;
+		var jawaban = $('#jawaban_essai_'+no).val();					
+		var s = $('#jawaban_essai_'+no).attr('pre');					
+		
+		
+		if (jawaban == '')
+			$("#answer"+no).html('');
+		else {
+			$("#answer"+no).html('<i class="fa fa-check"></i>');
+			$("#answer"+no).removeClass('d-none');
+		}
+		
+		$("#tmp_answer_"+no).html(jawaban);
+		
+		save_answer(no,jawaban);
+			   
+		// $("#answer"+no).css('color','#000');
+		
+			// $.post( "https://hasilun.puspendik.kemdikbud.go.id/akm/cbt/peserta/sv_ans",
+			// {
+				// id_soal: s,
+				// jawaban:jawaban,
+				// id_ujian: ,
+				// id_projek_ujian: 
+			// }, function(data) {
+		// });
+		// $("#cont-answer"+no).css('background','#000');
+		// $("#cont-answer"+no).css('color','#fff');
+		trigger_ragu(selected);
+			
+	}).blur(function() {});
+	
+	
+	function methodThatReturnsAPromise(i,jawaban) {
+		return new Promise((resolve, reject) => {
+			$.post( "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm/save_jawaban", {nomor: i,jawaban:jawaban, }, function(data) {resolve();});
+		});
+	}
+	
+	var promises = [Promise.resolve()];
+	
+	function pushPromise(i,jawaban)
+	{
+	  promises.push(promises.pop().then(function(){
+		return methodThatReturnsAPromise(i,jawaban)}));
+	}
+	
+	function save_ragu(nomor,jawaban) {
+		$.post( "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm/save_ragu", {nomor: nomor,jawaban:jawaban, }, function(data) {});
+	}
+	
+	function save_answer(nomor,jawaban) { 
+		pushPromise(nomor,jawaban);
+	}
+</script>
+
+</body>
+</html>
