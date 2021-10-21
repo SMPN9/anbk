@@ -868,7 +868,7 @@
 <script>
 	
 	$(document).ready(function() {
-	    $('#napes').val(localStorage.getItem('user')+'-'+localStorage.getItem('napes'))
+	    $('#napes').html(localStorage.getItem('user')+'-'+localStorage.getItem('napes'))
 		$('#loader').fadeOut();
 	});
 	var selected = 1;
