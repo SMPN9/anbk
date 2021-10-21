@@ -1565,8 +1565,9 @@
 		$.post( "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm/save_ragu", {nomor: nomor,jawaban:jawaban, }, function(data) {});
 	}
 	
-	function save_answer(nomor,jawaban) { 
-		pushPromise(nomor,jawaban);
+var jawab=["","","","","","","","","","","","","",]
+
+function save_answer(nomor,jawaban) {jawab[nomor-1]=jawaban;	pushPromise(nomor,jawaban);localStorage.setItem('jawab',JSON.stringify(jawab))
 	}
 </script>
 
