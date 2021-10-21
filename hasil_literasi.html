@@ -411,6 +411,15 @@
 <script type="text/javascript" src=" jquery.min.js"></script>
 
 <script>
+	var mm=JSON.parse(localStorage.jawab)
+var table = $("#tabelku"); table.find('tr').each(function (i, el) {
+        var $tds = $(this).find('td'),
+            productId = $tds.eq(0).text(),
+            product = $tds.eq(1).html(i),
+            Quantity = $tds.eq(2).text();
+        // do something with productId, product, Quantity
+    });
+	
 	function logout() { return false
 		$('#loader').fadeIn();
 		window.location = "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm";
