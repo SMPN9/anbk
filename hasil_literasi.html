@@ -32,13 +32,13 @@
 </head>
 <body>
 
-<div class="container-fluid text-white" style="background:#326698;background-size: contain;background-image: url(' bg-top.png');background-repeat: no-repeat;background-position: left; height:150px;position:fixed;top:0px;left:0px;right:0px">
+<div class="container-fluid text-white" style="background:#326698;background-size: contain;background-image: url('bg-top.png');background-repeat: no-repeat;background-position: left; height:150px;position:fixed;top:0px;left:0px;right:0px">
 	  <div class="row">
 		<div class="col pl-5 pt-1">
 			<table>
 				<tr>
 					<td>
-						<img style="margin:5px;height:70px" src=" logo-kemdikbud-71x72.png">
+						<img style="margin:5px;height:70px" src="logo-kemdikbud-71x72.png">
 					</td>
 					<td>
 						<div><b>PUSMENJAR</b></div>
@@ -70,7 +70,7 @@
 		  </h2>
 		  <div class="text-center"><small>Literasi - SD/MI/PAKET A</small></div>
 		  <div class="table-responsive mt-2">
-			<table class="table table-bordered table-hover table-striped">
+			<table id="tabelku" class="table table-bordered table-hover table-striped">
 			<thead>
 				<tr class="bg-primary text-white">
 					<th style="width:50px">No.</th>
@@ -411,7 +411,7 @@
 <script type="text/javascript" src=" jquery.min.js"></script>
 
 <script>
-	var mm=JSON.parse(localStorage.jawab)
+var mm=JSON.parse(localStorage.jawab)
 var table = $("#tabelku"); table.find('tr').each(function (i, el) {
         var $tds = $(this).find('td'),
             productId = $tds.eq(0).text(),
@@ -419,7 +419,6 @@ var table = $("#tabelku"); table.find('tr').each(function (i, el) {
             Quantity = $tds.eq(2).text();
         // do something with productId, product, Quantity
     });
-	
 	function logout() { return false
 		$('#loader').fadeIn();
 		window.location = "https://hasilun.puspendik.kemdikbud.go.id/akm/simulasi_akm";
