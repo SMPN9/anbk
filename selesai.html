@@ -31,7 +31,7 @@
 			<table>
 				<tr>
 					<td>
-						<img style="margin:5px;height:70px" src="https://hasilun.puspendik.kemdikbud.go.id/akm/images/logo-kemdikbud-71x72.png">
+						<img style="margin:5px;height:70px" src="logo-kemdikbud-71x72.png">
 					</td>
 					<td>
 						<div><b>PUSMENJAR</b></div>
@@ -44,7 +44,7 @@
 			<table align="right">
 				<tr>
 					<td style="vertical-align:top">
-						<div><small>P130100230 - ss<small></div>
+						<div><small id="napes" >P130100230 - ss<small></div>
 					</td>
 					<td>
 						<div class="pl-1 pr-1 pt-1 pb-1" style="background:#74b9ff;border-radius:2px;color:#326698"><i class="fa fa-graduation-cap fa-flip-horizontal"></i></div>
@@ -244,6 +244,7 @@
 <script type="text/javascript" src="jquery.min.js"></script>
   
 <script>
+	 $('#napes').html(localStorage.getItem('user')+'-'+localStorage.getItem('napes'))
 	function gohasil()
 	{
 		if (localStorage.getItem('opsi') =='Literasi - SD/MI/PAKET A'){
