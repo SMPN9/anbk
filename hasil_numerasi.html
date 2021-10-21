@@ -1,4 +1,4 @@
-<html lang="en"><head>
+ <html lang="en"><head>
 <title>Simulasi AKM</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,12 +13,13 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="icheck-bootstrap.min.css" />
+	<link rel="stylesheet" href="icheck-bootstrap.min.css">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120206082-3"></script>
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120206082-3"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.min.js"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -38,7 +39,7 @@
 						<img style="margin:5px;height:70px" src="logo-kemdikbud-71x72.png">
 					</td>
 					<td>
-						<div><font color="white"><b>PUSMENJAR</b></div>
+						<div><font color="white"><b>PUSMENJAR</b></font></div><font color="white">
 						<div><small>APLIKASI ANBK<small></small></small></div></font><small><small>
 					</small></small></td>
 				</tr>
@@ -48,7 +49,7 @@
 			<table align="right">
 				<tbody><tr>
 					<td style="vertical-align:top">
-						<div><font color="white"><small id="napes">P130100230 - sdfsdf</small></font></div><small><small>
+						<div><font color="white"><small id="napes">P130100230-</small></font></div><small><small>
 					</small></small></td>
 					<td>
 						<div class="pl-1 pr-1 pt-1 pb-1" style="background:#74b9ff;border-radius:2px;color:#326698"><i class="fa fa-graduation-cap fa-flip-horizontal"></i></div>
@@ -78,14 +79,13 @@
 			<tbody>
 									<tr>
 						<td>1.</td>
-													<td class="text-left">() </td>
+													<td class="text-left"></td>
 							<td class="text-left">(B) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>5</p>
 </td>
 											</tr>
 									<tr>
 						<td>2.</td>
-													<td class="text-left">
-								() <br>							</td><td class="text-left">
+													<td class="text-left"></td><td class="text-left">
 								(A) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>Andi dan Joni</p>
 <br>(C) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>Rosa dan Joni</p>
 <br>							</td>
@@ -120,14 +120,13 @@ karena kapasitas lift adalah 550 kg, sementara berat penumpang sudah mencapai<br
 											</tr>
 									<tr>
 						<td>9.</td>
-													<td class="text-left">() </td>
+													<td class="text-left"></td>
 							<td class="text-left">(C) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>4.000,00</p>
 </td>
 											</tr>
 									<tr>
 						<td>10.</td>
-													<td class="text-left">
-								() <br>							</td><td class="text-left">
+													<td class="text-left"></td><td class="text-left">
 								(A) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>6 tusuk masing-masing isi 3 permen</p>
 <br>(B) <!--?xml encoding="utf-8" ?--><!--?xml encoding="utf-8" ?--><p>3 tusuk masing-masing isi 5 permen dan 1 tusuk isi 3 permen</p>
 <br>							</td>
@@ -152,12 +151,12 @@ merah karena warna tersebut memiliki bagian paling besar pada papan di antara wa
 														<td class="text-left"></td><td class="text-left">A (Merah)<br>B (Merah)<br></td>											</tr>
 							</tbody>
 			</table>
-		</div>
+		</div></div>
 		<div class="text-right">
 		<button class="btn btn-primary btn-sm btn-round pull-right d-none">Lakukan simulasi lagi</button>
-		<button class="btn btn-primary btn-sm btn-round pull-right" onclick="downloadResult()" id="btn-unduh"><i class="fa fa-download"></i> Unduh Hasil</button>
-		<button class="btn btn-danger btn-sm btn-round pull-right" onclick="logout()">Logout <i class="fa fa-arrow-right" aria-hidden="true"></i></button></div>
-		</div>
+		<button class="btn btn-primary btn-sm btn-round pull-right" onclick="download()" id="btn-unduh"><i class="fa fa-download"></i> Unduh Hasil</button>
+		<button class="btn btn-danger btn-sm btn-round pull-right" onclick="window.location='https://smpn9.github.io/anbk/'">Logout <i class="fa fa-arrow-right" aria-hidden="true"></i></button></div>
+		
 	</div>
   </div> 
 </div>
@@ -349,6 +348,29 @@ merah karena warna tersebut memiliki bagian paling besar pada papan di antara wa
 <script type="text/javascript" src="jquery.min.js"></script>
 
 <script>
+
+const options = {
+  margin: 0.3,
+  filename: 'Hasil_simulasi.pdf',
+  image: {
+    type: 'jpeg',
+    quality: 0.98 },
+
+  html2canvas: {
+    scale: 2 },
+
+  jsPDF: {
+    unit: 'in',
+    format: 'a4',
+    orientation: 'portrait' } };
+
+function download(){
+var d= document.getElementById('formContent').innerHTML;
+ html2pdf().from(d).set(options).save();
+}
+
+
+
 	 $('#napes').html(localStorage.getItem('user')+'-'+localStorage.getItem('napes'))
 var mm=JSON.parse(localStorage.jawab)
 var table = $("#tabelku"); table.find('tr').each(function (i, el) {
@@ -389,6 +411,7 @@ var table = $("#tabelku"); table.find('tr').each(function (i, el) {
 	}
 </script>
   
+
 
 
 
