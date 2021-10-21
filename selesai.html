@@ -62,7 +62,7 @@
 				Terimakasih telah berpartisipasi dalam tes ini.
 				<br />Silahkan tekan tombol <span class="bg-danger text-white">SELESAI TES</span> untuk mengakhiri tes. Atau tekan tombol <span class="bg-success text-white">KEMBALI</span> untuk kembali ke halaman tes.
 			  </p>
-			  <button type="button" class="btn btn-danger btn-round mt-3 btn-sm" style="border-radius:20px;width:150px" onClick=" alert('Terima kasih');return false">SELESAI TES</button>
+			  <button type="button" class="btn btn-danger btn-round mt-3 btn-sm" style="border-radius:20px;width:150px" onClick="gohasil()">SELESAI TES</button>
 			  <button type="button" class="btn btn-success btn-round mt-3  btn-sm" style="border-radius:20px;width:150px" onClick="$('#loader').fadeIn(); window.location='https://smpn9.github.io/anbk/start.html'">KEMBALI</button>
 		</div>
 </div>
@@ -244,6 +244,20 @@
 <script type="text/javascript" src="jquery.min.js"></script>
   
 <script>
+	function gohasil()
+	{
+		if (localStorage.getItem('opsi') =='Literasi - SD/MI/PAKET A'){
+	 window.location='https://smpn9.github.io/anbk/hasil_literasi.html'
+	 return false}
+	else{
+	 window.location='https://smpn9.github.io/anbk/hasil_numerasi.html'
+	 return false
+	}
+		
+	return false	
+	}
+	
+	
 	function mulaiTes(){
 	window.location='file:///E:/link%20ayo%20akm/start.html'
 	
