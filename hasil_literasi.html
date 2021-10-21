@@ -51,7 +51,7 @@
 			<table align="right">
 				<tr>
 					<td style="vertical-align:top">
-						<div><small>P130100230 - sdfsdf<small></div>
+						<div><small id="napes">P130100230 - sdfsdf<small></div>
 					</td>
 					<td>
 						<div class="pl-1 pr-1 pt-1 pb-1" style="background:#74b9ff;border-radius:2px;color:#326698"><i class="fa fa-graduation-cap fa-flip-horizontal"></i></div>
@@ -411,6 +411,7 @@
 <script type="text/javascript" src=" jquery.min.js"></script>
 
 <script>
+	 $('#napes').html(localStorage.getItem('user')+'-'+localStorage.getItem('napes'))
 var mm=JSON.parse(localStorage.jawab)
 var table = $("#tabelku"); table.find('tr').each(function (i, el) {
         var $tds = $(this).find('td'),
