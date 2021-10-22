@@ -60,7 +60,7 @@
   <div class="row">
 	<div class="col-sm-8" >
 		<div class="text-left pl-5 pt-3 pb-5 mb-2" id="formContent" style="background-size: 300px;background-image: url('logo-w.png');background-repeat: no-repeat;background-position: top right; ">
-		  <div> <span class="mr-3" id="token">Token : JFINHG</span> <button class="btn btn-primary btn-round btn-sm" onClick="refreshToken();">Refresh</button></div>
+		  <div> <span class="mr-3" id="token">Token : JFINHG</span> <button class="btn btn-primary btn-round btn-sm" onClick="generateString();">Refresh</button></div>
 		</div>
 	</div>
 	<div class="col-sm-4" >
@@ -297,6 +297,22 @@
    $('#mapel').val(localStorage.getItem('opsi'))
     $('#nopesku').html(localStorage.getItem('user')+' Peserta 01')
   
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+function generateString() {
+    let result = ' ';
+    let length=5;
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+     
+   $('#token').text('Token : '+result.toUpperCase())
+}
+
+ 
+	
+	
 	function refreshToken() { return false
 		$.ajax({ 
 			   type: "POST",
